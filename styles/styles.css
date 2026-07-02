@@ -1,0 +1,248 @@
+/* Reset defaults and ensure the body fills the viewport */
+html, body {
+  margin: 0;
+}
+/* Set some basic settings for all <body> elements */
+body {
+  flex-direction: column;
+  padding: 10px;
+  min-height: 100vh;
+}
+/* Requirements are that all text is aligned left, without margin or padding, this places the text
+   too close to the left side of the page. */
+p {
+  padding-left: 20px;
+}
+/* Set some basic settings for all <main> elements */
+main {
+  flex: 1;
+  margin-top: 70px;
+}
+/* Set some basic settings for all elements */
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+/* Set <title> font to bold */
+title {
+  font-weight: bold;
+}
+/* Set <h1> to centered and 42pt */
+.centered-h1 {
+  text-align: center;
+  font-size: 42pt;
+}
+/* Setup our floating header */
+.floating-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  min-height: 70px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(33, 192, 165, 0.322);
+  backdrop-filter: blur(10px);
+  border-radius: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Setup our floating footer */
+.floating-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(33, 192, 165, 0.322);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Setup our classes for header and footer to flex and center */
+.header-left, .header-center, .header-right, .footer-left {
+  display: flex;
+  align-items: center;
+}
+/* Setup our class for header to fixed center */
+.header-center {
+  position:fixed;
+  left:50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size:22px;
+}
+/* Can't set right and left together, have to set each individually */
+.header-right {
+  gap: 10px;
+  padding-right: 5px; 
+  flex-wrap: wrap;
+}
+/* Can't set right and left together, have to set each individually */
+.header-left {
+  padding-left: 5px; 
+  flex-wrap: wrap;
+}
+/* Set our footer padding */
+.footer-left {
+  padding-left: 20px;
+}
+/* Class for form container used on email form */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: auto;
+}
+/* Class for grouping elements in the form container */
+.form-group {
+  margin-bottom: 15px;
+}
+/* Set label style */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+/* Set input and textarea elements style */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: 0.3s;
+  resize: none;
+}
+/* Set style for when input and textarea have focus */
+input:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+/* Submit button style */
+.submit-btn {
+  background: rgba(33, 192, 165, 0.322);
+  color:#080808;
+  font-weight: bold;
+  font-style: normal;
+  font-size:14pt;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+/* Change background colour of submit button when mouse hovers over it */
+.submit-btn:hover {
+  background: rgba(33, 192, 166, 0.952);
+}
+/* Container class for our staff image buttons */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-auto-rows:1fr;
+  gap: 10px;
+  margin:5px;
+  padding:10px;
+  justify-content: center;
+}
+/* Class definition for <div> elements within our staff image buttons */
+.container div {
+  top:10px;
+  background-color: white;
+  border-radius:8px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #F0F0F0;
+}
+/* <p> style within our staff image buttons */
+.container p {
+  font-size: 20pt;
+}
+/* Remove the border from our staff image buttons, so they blend a little nicer */
+.container button {
+  border:none;
+}
+/* Give our staff image buttons maximum height and width, stop them from scaling too large */
+.img-profile  {
+  max-width: 300px;
+  max-height:300px;
+  background-color: transparent;
+  padding: 5px;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 5%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+/* <h1> style within modals used */
+.modal-content h1 {
+  text-align:center;
+  font-weight: bold;
+}
+/* <h2> style within modals used */
+.modal-content h2 {
+  padding-left:20px;
+  font-weight:bold;
+}
+/* <h3> style within modals used */
+.modal-content h3 {
+  padding-left:20px;
+  font-weight:bold;
+  font-size:16px;
+}
+/* <p> style within modals used */
+.modal-content p {
+  padding-left: 20px;
+}
+/* The close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+/* The close styles for when hovered or gaining focus */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+@media screen and (min-width:800px) {
+  
+}
